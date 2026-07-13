@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: oklch(0.08 0.005 60);
+  --color-foreground: oklch(0.97 0.005 80);
+  --color-muted: oklch(0.15 0.005 60);
+  --color-muted-foreground: oklch(0.65 0.02 80);
+  --color-border: oklch(0.2 0.005 60);
+  --color-gold: oklch(0.82 0.14 82);
+  --color-gold-light: oklch(0.88 0.12 82);
+  --color-gold-dark: oklch(0.7 0.14 82);
+  --color-card: oklch(0.12 0.005 60);
+  --color-card-hover: oklch(0.15 0.005 60);
+  --color-accent: oklch(0.82 0.14 82);
+  --color-accent-foreground: oklch(0.08 0.005 60);
+  --color-primary-foreground: oklch(0.08 0.005 60);
+  --color-charcoal: oklch(0.12 0.005 60);
+  --color-success: oklch(0.65 0.18 145);
+  --color-danger: oklch(0.6 0.22 25);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-cormorant);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gradient-gold: linear-gradient(135deg, oklch(0.9 0.16 88), oklch(0.72 0.14 70) 50%, oklch(0.55 0.12 55));
+  --shadow-gold: 0 4px 24px oklch(0.82 0.14 82 / 0.12);
+  --shadow-gold-lg: 0 8px 40px oklch(0.82 0.14 82 / 0.18);
+  --shadow-gold-xl: 0 12px 56px oklch(0.82 0.14 82 / 0.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), Georgia, 'Times New Roman', serif;
+    font-weight: 300;
+    letter-spacing: -0.02em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); opacity: 0.4; }
+  50% { transform: translateY(-10px); opacity: 0.8; }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.82 0.14 82 / 0.1); }
+  50% { box-shadow: 0 0 40px oklch(0.82 0.14 82 / 0.2); }
+}
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { left: -200%; }
+  100% { left: 200%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.text-gold-gradient {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gold-gradient {
+  background: var(--gradient-gold);
+}
+
+.glass-card {
+  background: oklch(0.12 0.005 60 / 0.6);
+  border: 1px solid oklch(0.82 0.14 82 / 0.15);
+  backdrop-filter: blur(12px);
+}
+
+/* shine-hover effect */
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+}
+.shine-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, oklch(0.82 0.14 82 / 0.08), transparent);
+  transition: left 0.5s;
+}
+.shine-hover:hover::after {
+  left: 200%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.3 0.005 60);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.4 0.005 60);
+}
+
+::selection {
+  background: oklch(0.82 0.14 82 / 0.3);
+  color: var(--color-foreground);
 }
