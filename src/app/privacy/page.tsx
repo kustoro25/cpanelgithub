@@ -75,9 +75,9 @@ export default function PrivacyPage() {
             For privacy questions, contact{" "}
             <a
               className="text-gold hover:underline"
-              href="mailto:alphavantrexea@gmail.com"
+              href="mailto:alphavantrex@gmail.com"
             >
-              alphavantrexea@gmail.com
+              alphavantrex@gmail.com
             </a>
             .
           </p>
@@ -86,10 +86,10 @@ export default function PrivacyPage() {
         <div className="mt-16 border-t border-gold/10 pt-6 text-xs text-muted-foreground">
           Last updated: January 2026 · Questions? Email{" "}
           <a
-            href="mailto:alphavantrexea@gmail.com"
+            href="mailto:alphavantrex@gmail.com"
             className="text-gold hover:underline"
           >
-            alphavantrexea@gmail.com
+            alphavantrex@gmail.com
           </a>
         </div>
       </main>

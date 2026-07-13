@@ -67,7 +67,7 @@ export default function Support() {
             <ArrowRight className="h-4 w-4 text-gold" />
           </a>
           <a
-            href="mailto:alphavantrexea@gmail.com"
+            href="mailto:alphavantrex@gmail.com"
             className="glass-card flex items-center justify-between gap-4 rounded-2xl p-6 transition-all hover:border-gold/40"
           >
             <div className="flex items-center gap-4">
@@ -79,7 +79,7 @@ export default function Support() {
                   Email
                 </div>
                 <div className="text-sm text-foreground/90">
-                  alphavantrexea@gmail.com
+                  alphavantrex@gmail.com
                 </div>
               </div>
             </div>

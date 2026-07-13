@@ -77,15 +77,15 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm text-foreground/70">
               <li>
-                <a href="mailto:alphavantrexea@gmail.com" className="flex items-center gap-2 hover:text-gold">
+                <a href="mailto:alphavantrex@gmail.com" className="flex items-center gap-2 hover:text-gold">
                   <Mail className="h-3.5 w-3.5 text-gold" />
-                  alphavantrexea@gmail.com
+                  alphavantrex@gmail.com
                 </a>
               </li>
               <li>
-                <a href="https://t.me/Alphavantrex1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold">
+                <a href="https://t.me/Alphavantrex" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold">
                   <Send className="h-3.5 w-3.5 text-gold" />
-                  t.me/Alphavantrex1
+                  t.me/Alphavantrex
                 </a>
               </li>
               <li>

@@ -39,7 +39,7 @@ export default function FinalCTA() {
                 Get Your EA Now <Send className="h-4 w-4" />
               </a>
               <a
-                href="mailto:alphavantrexea@gmail.com"
+                href="mailto:alphavantrex@gmail.com"
                 className="inline-flex items-center gap-3 rounded-full border border-gold/40 px-10 py-4 text-sm font-medium uppercase tracking-[0.24em] text-gold hover:bg-gold/10"
               >
                 <Mail className="h-4 w-4" /> Contact Us
